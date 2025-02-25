@@ -1,0 +1,14 @@
+CallableStatement cs=con.prepareCall("call insertcustomer(?,?,?,?,?,?)"); 
+	    cs.setString(1,customer_name); 
+	    cs.setString(2,customer_email); 
+	    cs.setString(3,customer_password);
+	    cs.setString(4,customer_address); 
+	    cs.setString(5,customer_city);  
+	    cs.setString(6,customer_area);  
+  	
+	   int i=cs.executeUpdate();  
+	   if(i>0){
+	   System.out.println("Account Created Successfully");
+    }else{
+		System.out.println("Account not created");
+	}
